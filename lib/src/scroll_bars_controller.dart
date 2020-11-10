@@ -80,7 +80,8 @@ abstract class ScrollBarsController {
     _oldOffset = pixels;
 
     if (position.axisDirection == AxisDirection.down &&
-        position.extentAfter == 0.0) {
+        position.extentAfter == 0.0 &&
+        position.maxScrollExtent > height) {
       if (heightNotifier.value == 0.0) return;
       heightNotifier.value = 0.0;
       return;
